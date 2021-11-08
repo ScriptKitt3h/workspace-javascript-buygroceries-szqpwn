@@ -9,6 +9,7 @@ $('.hot').each(function () {
 });
 // traverse the elements
 $('#one').next().next().text('Pilk, 5gal. jug');
+$('#one').remove();
 // add a new element by clicking the plus sign
 $('#todo').append('<li>candy</li>');
 $('#add').click(addElement);
@@ -25,6 +26,7 @@ function addElement() {
     var items = $(this).val();
     // replace input textbox with new text item(s)
     $(this).parent().text(items);
+    $('li').click(changeStyle);
   });
 }
 
@@ -39,9 +41,12 @@ function changeStyle() {
   } else if ($(this).hasClass('complete')) {
     $(this).removeClass();
     $(this).addClass('cool');
-  } else if ($(this).hasClass('hot')) {
+  } else if ($(this).hasClass('cool')) {
     $(this).removeClass();
     $(this).addClass('cool');
+  } else if ($(this).hasClass('hot')) {
+    $(this).removeClass();
+    $(this).addClass('complete');
   }
 }
 
@@ -50,4 +55,5 @@ document.getElementById('remove').addEventListener('click', removeElement);
 
 function removeElement() {
   // remove the marked elements  -- element with style complete
+  $('li.complete').remove();
 }
