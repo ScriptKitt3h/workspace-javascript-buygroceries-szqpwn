@@ -11,7 +11,6 @@ $('.hot').each(function () {
 $('#one').next().next().text('Pilk, 5gal. jug');
 $('#one').remove();
 // add a new element by clicking the plus sign
-$('#todo').append('<li>candy</li>');
 $('#add').click(addElement);
 // before and after are for siblings
 // append and prepend are for parent
@@ -39,9 +38,6 @@ function changeStyle() {
     $(this).removeClass('cool');
     $(this).addClass('complete');
   } else if ($(this).hasClass('complete')) {
-    $(this).removeClass();
-    $(this).addClass('cool');
-  } else if ($(this).hasClass('cool')) {
     $(this).removeClass();
     $(this).addClass('cool');
   } else if ($(this).hasClass('hot')) {
