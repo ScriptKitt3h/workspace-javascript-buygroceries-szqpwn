@@ -8,18 +8,24 @@ $('.hot').each(function () {
   $(this).addClass('cool');
 });
 // traverse the elements
-$('#one').next().next().text("Pilk, 5gal. jug");
+$('#one').next().next().text('Pilk, 5gal. jug');
 // add a new element by clicking the plus sign
+$('#todo').append('<li>candy</li>');
 $('#add').click(addElement);
 // before and after are for siblings
 // append and prepend are for parent
 
 function addElement() {
   // add a new element
-  $('#todo').append("<li>placeholder</li>");
   // add a input text box
-  
+  $('#todo').append('<li><input type="text"></li>');
   // whenever the user are done add the element
+  $('input').blur(function () {
+    $(this).parent().addClass('cool');
+    var items = $(this).val();
+    // replace input textbox with new text item(s)
+    $(this).parent().text(items);
+  });
 }
 
 // bind click with the event handler
